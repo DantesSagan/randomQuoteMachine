@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-target-blank */
 import './App.css';
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -112,20 +113,23 @@ class RandomQuoteMachine extends React.Component {
 
           <div className='card-footer'>
             <a
+              type='button'
               id='tweet-quote'
               className='btn'
-              href='https://twitter.com/intent/tweet'
+              href={`https://twitter.com/intent/tweet?text=${text}--${authors}`}
               title='tweet twitter'
               target='_top'
             >
               {' '}
               <i className='fa fa-twitter-square' aria-hidden='true'></i>
             </a>
+            
             <a
+              type='button'
               id='tweet-quote'
               className='btn'
-              href='https://vk.com/'
-              title='tweet vk'
+              href={`https://vk.com/share.php?url=${text}--${authors}`}
+              title='share vk'
               target='_top'
             >
               {' '}
