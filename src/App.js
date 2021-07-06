@@ -140,6 +140,7 @@ class RandomQuoteMachine extends React.Component {
             >
               Quote
             </button>
+            <label>@DantesSagan</label>
           </div>
           <br />
         </div>
