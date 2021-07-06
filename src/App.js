@@ -1,8 +1,8 @@
 import './App.css';
 import React from 'react';
-import '../src/color/hex';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-class MagicEightBall extends React.Component {
+class RandomQuoteMachine extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -11,9 +11,10 @@ class MagicEightBall extends React.Component {
     };
     this.handleClick = this.handleClick.bind(this);
   }
+
   handleClick(event) {
     this.setState({
-      randomIndex: Math.floor(Math.random() * 20),
+      randomIndex: Math.floor(Math.random() * 15),
       btn: event.target.value,
     });
   }
@@ -21,35 +22,72 @@ class MagicEightBall extends React.Component {
   render() {
     const possibleAnswers = [
       // change this line to create new random aphorisms
-      'Главная задача — это каждый день узнавать что-то новое. (Ларри Кинг)',
-      'It is decidedly so',
-      'Without a doubt',
-      'Yes, definitely',
-      'You may rely on it',
-      'As I see it, yes',
-      'Outlook good',
-      'Yes',
-      'Signs point to yes',
-      'Reply hazy try again',
-      'Ask again later',
-      'Better not tell you now',
-      'Cannot predict now',
-      'Concentrate and ask again',
-      "Don't count on it",
-      'My reply is no',
-      'My sources say no',
-      'Most likely',
-      'Outlook not so good',
-      'Very doubtful',
+      'Главная задача — это каждый день узнавать что-то новое.',
+      'Хорошая жена, хороший дом — что ещё надо человеку, чтобы встретить старость?.',
+      'Нет ничего более замечательного, чем распространение религиозного неверия, или рационализма, на протяжении второй половины моей жизни.',
+      'Что-то неутоленное, неутолимое есть во мне; оно хочет говорить.',
+      'Хорошо, что народ не понимает, как работает наша банковская система. Иначе завтра же случилась бы революция.',
+      'Failure will never overtake me if my determination to succeed is strong enough.',
+      'There is no elevator to success, you have to take the stairs.',
+      'Be not afraid of greatness. Some are born great, some achieve greatness, and others have greatness thrust upon them.',
+      'Ever Tried. Ever failed. No matter. Try again. Fail again. Fail better.',
+      'You can, you should, and if you"re brave enough to start, you will.',
+      'Without hard work, nothing grows but weeds.',
+      'You must do the things you think you cannot do.',
+      'Follow your inner moonlight. Don"t hide the madness.',
+      'In the depth of winter, I finally learned that within me there lay an invincible summer.',
+      'The scariest moment is always just before you start.',
+      'May you live every day of your life.',
     ];
-    const answer = possibleAnswers[this.state.randomIndex];
-    const authors = possibleAnswers[this.state.randomIndex];
+    const authorsText = [
+      'Ларри Кинг',
+      'Белое солнце пустыни',
+      'Чарльз Дарвин',
+      'Фридрих Ницше, "Так говорил Заратустра"',
+      'Генри Форд',
+      'Og Mandino',
+      'Zig Ziglar',
+      'William Shakespeare',
+      'Samuel Beckett',
+      'Stephen King',
+      'Gordon B. Hinckley',
+      'Eleanor Roosevelt',
+      'Allen Ginsberg',
+      'Albert Camus',
+      'Stephen King',
+      'Jonathan Swift',
+    ];
+    const colors = [
+      '#7CB9E8',
+      '#A3C1AD',
+      '#0E3386',
+      '#00008B',
+      '#FBCEB1',
+      '#FF0800',
+      '#DC143C',
+      '#4B6F44',
+      '#87A96B',
+      '#8F9779',
+      '#3FFF00',
+      '#D0F0C0',
+      'black',
+      'white',
+      'yellow',
+      'blue',
+      'green',
+      'purple',
+      'pink',
+    ];
+    const color = colors[this.state.randomIndex];
+    const text = possibleAnswers[this.state.randomIndex];
+    const authors = authorsText[this.state.randomIndex];
     return (
       <div
         className='container-fluid d-flex align-items-center justify-content-center'
+        style={{ backgroundColor: color }}
         id='quote-box'
       >
-        <div className='card'>
+        <div className='card' id='card'>
           <div className='card-body' id='quote-text'>
             <blockquote className='blockquote mb-0'>
               <h3>
@@ -57,7 +95,7 @@ class MagicEightBall extends React.Component {
               </h3>
               <br />
               <span id='text' className='card-text'>
-                {answer}
+                {text}
               </span>
               <h3>
                 <i className='fa fa-quote-right' id='floatRight'></i>
@@ -72,8 +110,7 @@ class MagicEightBall extends React.Component {
             </blockquote>
           </div>
 
-          <div className='buttons card-footer'>
-            <span className='color'></span>
+          <div className='card-footer'>
             <a
               id='tweet-quote'
               className='btn'
@@ -96,13 +133,12 @@ class MagicEightBall extends React.Component {
             </a>
             <button
               onClick={this.handleClick.bind(this)}
-              className='btn btn-primary button'
+              className='btn-hero button'
               id='new-quote'
             >
               Quote
             </button>
           </div>
-
           <br />
         </div>
       </div>
@@ -110,4 +146,4 @@ class MagicEightBall extends React.Component {
   }
 }
 
-export default MagicEightBall;
+export default RandomQuoteMachine;

@@ -1,35 +1,67 @@
-.App {
-  text-align: center;
+/* elements */
+*{
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
+/* id */
 #quote-box {
-  height: 900px;
+  height: 975px;
 }
 
 #quote-text {
-   margin-top: 20px;
-  margin-bottom: 50px;
+  margin-top: 20px;
+  margin-bottom: 150px;
   height: 10rem;
   width: 38rem;
-}
-
-.button {
-  float: right;
+  opacity: 1;
 }
 
 #floatRight {
   float: right;
 }
 
-.fa {
-  font-size: 2rem;
-}
-
 #author {
   float: right;
 }
+/* classes */
+
+.fa {
+  font-size: 2rem;
+}
+.button {
+  float: right;
+}
+.btn-hero {
+  font-family: var(--ff-primary);
+  background: transparent;
+  color: var(--clr-black);
+  letter-spacing: var(--spacing);
+  display: inline-block;
+  font-weight: 700;
+  transition: var(--transition);
+  border: 2px solid var(--clr-black);
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  border-radius: 30px;
+  font-size: 1rem;
+  padding: 0.75rem 1.25rem;
+}
+.btn-hero:hover {
+  color: var(--clr-white);
+  background: var(--clr-black);
+}
+.btn-hero:active {
+  color: var(--clr-white);
+  background: var(--clr-black);
+  transform: scale(0.9);
+}
+
+#card {
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+
