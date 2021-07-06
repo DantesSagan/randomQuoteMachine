@@ -113,8 +113,8 @@ class RandomQuoteMachine extends React.Component {
 
           <div className='card-footer'>
             <a
-              type='button'
               id='tweet-quote'
+              type='button'
               className='btn'
               href={`https://twitter.com/intent/tweet?text=${text}--${authors}`}
               title='tweet twitter'
@@ -123,10 +123,8 @@ class RandomQuoteMachine extends React.Component {
               {' '}
               <i className='fa fa-twitter-square' aria-hidden='true'></i>
             </a>
-            
             <a
               type='button'
-              id='tweet-quote'
               className='btn'
               href={`https://vk.com/share.php?url=${text}--${authors}`}
               title='share vk'

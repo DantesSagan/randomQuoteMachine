@@ -1,5 +1,5 @@
 /* elements */
-*{
+* {
   margin: 0;
   padding: 0;
   vertical-align: baseline;
@@ -7,6 +7,9 @@
 /* id */
 #quote-box {
   height: 975px;
+}
+#tweet-quote {
+  font-weight: bold;
 }
 
 #quote-text {
@@ -63,5 +66,3 @@
   border-radius: 30px;
   border: 1px solid rgba(255, 255, 255, 0.18);
 }
-
-
